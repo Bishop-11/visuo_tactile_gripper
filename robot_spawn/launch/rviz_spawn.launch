@@ -1,0 +1,19 @@
+<launch>
+
+    <!-- Launch Robot in RVIZ -->
+
+    <!-- Load Robot Description -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find robot_description)/urdf/gripper1.urdf"/>
+
+    <!-- Robot Joint State Publisher -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="False"/>
+    </node>
+
+    <!-- Robit State Publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+    <!-- Spawn Robot in RVIZ -->
+    <node name="rviz" pkg="rviz" type="rviz"/>
+
+</launch>
