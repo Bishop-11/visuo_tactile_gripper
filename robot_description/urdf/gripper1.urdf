@@ -85,12 +85,12 @@
   </link>
 
   <!-- Joint 2 -->  
-  <joint name="joint_2" type="fixed">
+  <joint name="joint_2" type="revolute">
     <parent link="link_1"/>
     <child link="link_2"/>
     <origin xyz="0 0 0.35" rpy="0 0 0"/>
-    <!-- <axis xyz="0 0 1"/>
-    <limit effort="10" lower="-1.57" upper="1.57" velocity="5"/> -->
+    <axis xyz="0 0 1"/>
+    <limit effort="10" lower="-1.57" upper="1.57" velocity="5"/>
   </joint>
 
   <!-- ################################################################################################# -->
