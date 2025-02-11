@@ -13,7 +13,7 @@ rospy.init_node('reachable_workspace_computation', anonymous=True)
 moveit_commander.roscpp_initialize([])
 
 # Define MoveGroupCommander for your robot arm
-group_name = "all_joints"  # Change this to your MoveIt! group name
+group_name = "gripper_joints"  # Change this to your MoveIt! group name
 move_group = moveit_commander.MoveGroupCommander(group_name)
 
 # Get the end effector link name
