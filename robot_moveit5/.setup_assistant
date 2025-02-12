@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: robot_description
+    relative_path: urdf/gripeer2.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/gripper_v1.srdf
+  CONFIG:
+    author_name: Bishop Prakash
+    author_email: bishop.prakash01@gmail.com
+    generated_timestamp: 1739367780

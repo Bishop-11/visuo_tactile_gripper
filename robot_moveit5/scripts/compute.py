@@ -85,6 +85,15 @@ for sample_num in range(num_samples):
         #rospy.logwarn(f"Skipping invalid joint target: {random_joint_values} - {e}")
         continue  # Skip this iteration and try again
 
+
+    if sample_num%(num_samples/10) == 0:
+        # Save points to CSV
+        csv_file = "/home/bishop/Documents/ROS_Workspaces/gripper_ws/src/visuo_tactile_gripper/robot_moveit3/saved_points/reachable_workspace2.csv"
+        with open(csv_file, "w", newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(["x", "y", "z"])
+            writer.writerows(reachable_points)
+
 move_group.stop()
 
 # Save points to CSV
