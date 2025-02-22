@@ -1,0 +1,946 @@
+<?xml version="1.0" ?>
+<robot name="gripper_v1">
+    <!-- ################################################################################################# -->
+    <!-- Map -->
+    <link name="map" />
+    <!-- Base Link -->
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Base.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="White" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Base.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="White" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 0 -->
+    <joint name="joint_0" type="fixed">
+        <parent link="map" />
+        <child link="base_link" />
+        <origin xyz="0 0 0.025" rpy="0 0 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 1 -->
+    <link name="link_1">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 1 -->
+    <joint name="joint_1" type="fixed">
+        <parent link="base_link" />
+        <child link="link_1" />
+        <origin xyz="0 -0.15 0.20" rpy="1.57 0 0" />
+    </joint>
+    <!-- Link 2 -->
+    <link name="link_2">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 2 -->
+    <joint name="joint_2" type="fixed">
+        <parent link="base_link" />
+        <child link="link_2" />
+        <origin xyz="0 0.15 0.20" rpy="-1.57 3.14 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 3 -->
+    <link name="link_3">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 3 -->
+    <joint name="joint_3" type="fixed">
+        <parent link="link_1" />
+        <child link="link_3" />
+        <origin xyz="0 0 0.42" rpy="-1.57 0 0" />
+    </joint>
+    <!-- Link 4 -->
+    <link name="link_4">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 4 -->
+    <joint name="joint_4" type="fixed">
+        <parent link="link_2" />
+        <child link="link_4" />
+        <origin xyz="0 0 0.42" rpy="-1.57 0 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 5 -->
+    <link name="link_5">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 5 -->
+    <joint name="joint_5" type="revolute">
+        <parent link="link_3" />
+        <child link="link_5" />
+        <origin xyz="0 0 0" rpy="0 0 1.57" />
+        <axis xyz="0 0 1" />
+        <limit effort="10" lower="-1.57" upper="1.57" velocity="5" />
+    </joint>
+    <!-- Link 6 -->
+    <link name="link_6">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 6 -->
+    <joint name="joint_6" type="revolute">
+        <parent link="link_4" />
+        <child link="link_6" />
+        <origin xyz="0 0 0" rpy="0 0 1.57" />
+        <axis xyz="0 0 1" />
+        <limit effort="10" lower="-1.57" upper="1.57" velocity="5" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 7 -->
+    <link name="link_7">
+        <visual>
+            <geometry>
+                <box size="0.2 0.2 0.4" />
+            </geometry>
+            <material name="White" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.2 0.2 0.4" />
+            </geometry>
+            <material name="White" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 7 -->
+    <joint name="joint_7" type="fixed">
+        <parent link="link_5" />
+        <child link="link_7" />
+        <origin xyz="-0.40 0 0" rpy="0 -1.57 0 " />
+    </joint>
+    <!-- Link 8 -->
+    <link name="link_8">
+        <visual>
+            <geometry>
+                <box size="0.2 0.2 0.4" />
+            </geometry>
+            <material name="White" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.2 0.2 0.4" />
+            </geometry>
+            <material name="White" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 8 -->
+    <joint name="joint_8" type="fixed">
+        <parent link="link_6" />
+        <child link="link_8" />
+        <origin xyz="-0.40 0 0" rpy="0 -1.57 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 9 -->
+    <link name="link_9">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 9 -->
+    <joint name="joint_9" type="fixed">
+        <parent link="link_7" />
+        <child link="link_9" />
+        <origin xyz="0.1 0 0.05" rpy="1.57 0 1.57" />
+    </joint>
+    <!-- Link 10 -->
+    <link name="link_10">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 10 -->
+    <joint name="joint_10" type="fixed">
+        <parent link="link_8" />
+        <child link="link_10" />
+        <origin xyz="0.1 0 0.05" rpy="1.57 0 1.57" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 11 -->
+    <link name="link_11">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 11 -->
+    <joint name="joint_11" type="fixed">
+        <parent link="link_9" />
+        <child link="link_11" />
+        <origin xyz="0 0 0.42" rpy="-1.57 0 0" />
+    </joint>
+    <!-- Link 12 -->
+    <link name="link_12">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 12 -->
+    <joint name="joint_12" type="fixed">
+        <parent link="link_10" />
+        <child link="link_12" />
+        <origin xyz="0 0 0.42" rpy="-1.57 0 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 13 -->
+    <link name="link_13">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_30x50.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_30x50.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 13 -->
+    <joint name="joint_13" type="revolute">
+        <parent link="link_11" />
+        <child link="link_13" />
+        <origin xyz="0 0 -0.22" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit effort="10" lower="-1.57" upper="1.57" velocity="5" />
+    </joint>
+    <!-- Link 14 -->
+    <link name="link_14">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_30x50.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_30x50.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 14 -->
+    <joint name="joint_14" type="revolute">
+        <parent link="link_12" />
+        <child link="link_14" />
+        <origin xyz="0 0 -0.22" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit effort="10" lower="-1.57" upper="1.57" velocity="5" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 15 -->
+    <link name="link_15">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 15 -->
+    <joint name="joint_15" type="fixed">
+        <parent link="link_13" />
+        <child link="link_15" />
+        <origin xyz="0 -0.15 -0.10" rpy="0 1.57 0" />
+    </joint>
+    <!-- Link 16 -->
+    <link name="link_16">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 16 -->
+    <joint name="joint_16" type="fixed">
+        <parent link="link_14" />
+        <child link="link_16" />
+        <origin xyz="0 -0.15 -0.10" rpy="0 1.57 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 17 -->
+    <link name="link_17">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 17 -->
+    <joint name="joint_17" type="revolute">
+        <parent link="link_15" />
+        <child link="link_17" />
+        <origin xyz="0 0 0" rpy="0 0 1.57" />
+        <axis xyz="0 0 1" />
+        <limit effort="10" lower="-1.57" upper="1.57" velocity="5" />
+    </joint>
+    <!-- Link 18 -->
+    <link name="link_18">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 18 -->
+    <joint name="joint_18" type="revolute">
+        <parent link="link_16" />
+        <child link="link_18" />
+        <origin xyz="0 0 0" rpy="0 0 1.57" />
+        <axis xyz="0 0 1" />
+        <limit effort="10" lower="-1.57" upper="1.57" velocity="5" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 19 -->
+    <link name="link_19">
+        <visual>
+            <geometry>
+                <box size="0.1 0.2 0.2" />
+            </geometry>
+            <material name="White" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.1 0.2 0.2" />
+            </geometry>
+            <material name="White" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 19 -->
+    <joint name="joint_19" type="fixed">
+        <parent link="link_17" />
+        <child link="link_19" />
+        <origin xyz="-0.25 0 0" rpy="0 0 0 " />
+    </joint>
+    <!-- Link 20 -->
+    <link name="link_20">
+        <visual>
+            <geometry>
+                <box size="0.1 0.2 0.2" />
+            </geometry>
+            <material name="White" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.1 0.2 0.2" />
+            </geometry>
+            <material name="White" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 20 -->
+    <joint name="joint_20" type="fixed">
+        <parent link="link_18" />
+        <child link="link_20" />
+        <origin xyz="-0.25 0 0" rpy="0 0 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 21 -->
+    <link name="link_21">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 21 -->
+    <joint name="joint_21" type="fixed">
+        <parent link="link_19" />
+        <child link="link_21" />
+        <origin xyz="-0.05 0 0" rpy="-1.57 0 1.57" />
+    </joint>
+    <!-- Link 22 -->
+    <link name="link_22">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo_Plate_20x30.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Grey" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 22 -->
+    <joint name="joint_22" type="fixed">
+        <parent link="link_20" />
+        <child link="link_22" />
+        <origin xyz="-0.05 0 0" rpy="-1.57 0 1.57" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 23 -->
+    <link name="link_23">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 23 -->
+    <joint name="joint_23" type="fixed">
+        <parent link="link_21" />
+        <child link="link_23" />
+        <origin xyz="0 0 0.42" rpy="-1.57 0 0" />
+    </joint>
+    <!-- Link 24 -->
+    <link name="link_24">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Servo1.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Blue" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 24 -->
+    <joint name="joint_24" type="fixed">
+        <parent link="link_22" />
+        <child link="link_24" />
+        <origin xyz="0 0 0.42" rpy="-1.57 0 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 25 -->
+    <link name="link_25">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 25 -->
+    <joint name="joint_25" type="revolute">
+        <parent link="link_23" />
+        <child link="link_25" />
+        <origin xyz="0 0 0" rpy="0 0 1.57" />
+        <axis xyz="0 0 1" />
+        <limit effort="10" lower="-1.57" upper="1.57" velocity="5" />
+    </joint>
+    <!-- Link 26 -->
+    <link name="link_26">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Clamp.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 26 -->
+    <joint name="joint_26" type="revolute">
+        <parent link="link_24" />
+        <child link="link_26" />
+        <origin xyz="0 0 0" rpy="0 0 1.57" />
+        <axis xyz="0 0 1" />
+        <limit effort="10" lower="-1.57" upper="1.57" velocity="5" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 27 -->
+    <link name="link_27">
+        <visual>
+            <geometry>
+                <box size="0.1 0.2 0.2" />
+            </geometry>
+            <material name="White" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.1 0.2 0.2" />
+            </geometry>
+            <material name="White" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 27 -->
+    <joint name="joint_27" type="fixed">
+        <parent link="link_25" />
+        <child link="link_27" />
+        <origin xyz="-0.25 0 0" rpy="0 0 0 " />
+    </joint>
+    <!-- Link 28 -->
+    <link name="link_28">
+        <visual>
+            <geometry>
+                <box size="0.1 0.2 0.2" />
+            </geometry>
+            <material name="White" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.1 0.2 0.2" />
+            </geometry>
+            <material name="White" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 28 -->
+    <joint name="joint_28" type="fixed">
+        <parent link="link_26" />
+        <child link="link_28" />
+        <origin xyz="-0.25 0 0" rpy="0 0 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Link 29 -->
+    <link name="link_29">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Hemisphere.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Hemisphere.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 29 -->
+    <joint name="joint_29" type="fixed">
+        <parent link="link_27" />
+        <child link="link_29" />
+        <origin xyz="-0.05 0 0" rpy="0 -1.57 0" />
+    </joint>
+    <!-- Link 30 -->
+    <link name="link_30">
+        <visual>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Hemisphere.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/Hemisphere.stl" scale="0.01 0.01 0.01" />
+            </geometry>
+            <material name="Red" />
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        </inertial>
+    </link>
+    <!-- Joint 30 -->
+    <joint name="joint_30" type="fixed">
+        <parent link="link_28" />
+        <child link="link_30" />
+        <origin xyz="-0.05 0 0" rpy="0 -1.57 0" />
+    </joint>
+    <!-- ################################################################################################# -->
+    <!-- Gazebo plugin for ROS integration -->
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+            <controlPeriod>0.001</controlPeriod>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
+    <gazebo reference="base_link">
+        <mesh>
+            <uri>model://robot_description/meshes/Base.stl</uri>
+            <scale>1 1 1</scale>
+        </mesh>
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="link_1">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="link_2">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <transmission name="trans_joint_5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_5_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_6">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_6">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_6_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_13">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_13">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_13_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_14">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_14">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_14_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_17">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_17">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_17_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_18">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_18">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_18_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_25">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_25">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_25_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_26">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_26">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_26_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+</robot>
+
