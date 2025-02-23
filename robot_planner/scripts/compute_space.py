@@ -1,7 +1,8 @@
+import sys
 import rospy
 import moveit_commander
-from moveit_commander.robot_trajectory import RobotTrajectory
-from moveit_commander.motion_planners import MoveGroupCommander
+from moveit_commander.robot_trajectory import RobotTrajectory   # type: ignore
+from moveit_commander.motion_planners import MoveGroupCommander # type: ignore
 from geometry_msgs.msg import Pose
 import math
 
@@ -13,7 +14,7 @@ def get_end_effector_range():
     # Initialize the MoveGroupCommander for your robot's planning group
     robot = moveit_commander.RobotCommander()
     scene = moveit_commander.PlanningSceneInterface()
-    group = moveit_commander.MoveGroupCommander("your_robot_arm")
+    group = moveit_commander.MoveGroupCommander("left_arm")
 
     # Get the current end effector pose (position and orientation)
     current_pose = group.get_current_pose().pose

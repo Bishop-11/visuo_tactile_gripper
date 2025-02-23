@@ -1,0 +1,18 @@
+<launch>
+    <!-- Load robot description -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find robot_description)/urdf/gripper4.urdf" />
+
+    <!-- Load MoveIt! from its package -->
+    <include file="$(find gripper4_moveit)/launch/demo.launch" />
+    
+    <!-- Start MoveIt! -->
+    <!-- <node name="move_group" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen">
+        <param name="use_sim_time" value="true"/>
+    </node> -->
+
+    <!-- RViz for visualization -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gripper4_moveit)/config/demo.rviz" />
+
+    <!-- Run the Python script -->
+    <node pkg="gripper4_moveit" type="follow_path.py" name="follow_path" output="screen"/>
+</launch>
