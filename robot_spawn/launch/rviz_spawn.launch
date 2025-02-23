@@ -3,7 +3,7 @@
     <!-- Launch Robot in RVIZ -->
 
     <!-- Load Robot Description -->
-    <param name="robot_description" command="$(find xacro)/xacro $(find robot_description)/urdf/gripper3.urdf"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find robot_description)/urdf/gripper4.urdf"/>
 
     <!-- Robot Joint State Publisher -->
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
